@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AvatarContext from "../context/AvatarContext";
+import selAvatarContext from "../context/SelAvatarContext";
 
 const AvatarsCard = (props) => {
+
+    const avatarImage = require(`../assets/img/${props.img}`).default;
+    const {avatars} = useContext(AvatarContext);
+    const { setSelAvatar} = useContext(selAvatarContext);
+    
+    const selectedAvatar = () =>
+
+    {
+       
+        const seldAvatar = avatars.find((avatar) => avatar.isSelected === true);
+
+        setSelAvatar(seldAvatar);
+ 
+    }
+
+ 
+
+
     return (
         <>
-                    <div className="avatar-sect">
-
+                    <div className="avatar-sect" onClick={selectedAvatar} >
+  
                                 <div>
 
-                                    <img src={props.img} alt="avatar headshot" />
+                                    <img src={avatarImage} alt="avatar headshot" />
 
                                 </div>
 
