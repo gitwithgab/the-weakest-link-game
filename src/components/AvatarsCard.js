@@ -8,34 +8,38 @@ const AvatarsCard = (props) => {
     const { avatars } = useContext(AvatarContext);
     const { setSelAvatar } = useContext(selAvatarContext);
     
-    const selectedAvatar = () =>
+    let selectedAvatar = () =>
 
     {
 
         const dupAvatars = [...avatars];
 
-        const trueAvatar = dupAvatars.find((avatar) => avatar.isSelected === true);
+        const activeAvatar = dupAvatars.find((avatar) => avatar.isSelected === true);
 
-        if(trueAvatar)
+        if(activeAvatar)
 
         {
         
-            trueAvatar.isSelected = false;
+            activeAvatar.isSelected = false;
         
         }
 
         const seldAvatar = dupAvatars.find((avatar) => avatar.id === props.id);
-
+        
         seldAvatar.isSelected = true;
 
         setSelAvatar(seldAvatar);
      
     }
+    
+
+  
+
 
 
     return (
         <>
-                    <div className={props.isSelected ? "avatar-sect selected" : "avatar-sect"} onClick={selectedAvatar} >
+                    <div className={props.isSelected ? "avatar-sect selected" : "avatar-sect"} onClick={selectedAvatar}>
   
                                 <div>
 

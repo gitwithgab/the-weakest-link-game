@@ -7,7 +7,7 @@ const BtnPlay = () => {
             
             <Link to="/play">
                
-               <button className="btn" type="button" id="cashButton">PLAY</button>
+               <button className="btn" type="button" id="cashButton">ACCEPT</button>
           
             </Link> 
 

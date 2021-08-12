@@ -6,7 +6,7 @@ const BtnBack = () => {
         <>
             <Link to="/">
                
-               <button className="btn" type="button" id="cashButton">BACK</button>
+               <button className="btn" type="button" id="cashButton">CANCEL</button>
           
             </Link> 
         </>

@@ -57,7 +57,8 @@ button
 
   #start-page>div
   {
-    width:15%;
+    width:200px;
+    height: 100px;
   }
 
   #select-container
@@ -79,14 +80,6 @@ button
       cursor: default;
     }
 
-  #select-container>div:nth-child(3)
-  {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      width:30%;
-      column-gap: 20%;
-  }
-
   .avatars-container
   {
       display: grid;
@@ -95,6 +88,15 @@ button
       column-gap: 5%;
       row-gap: 5%;
       height:100%;
+  }
+
+    #select-container>div:nth-child(3)
+  {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width:400px;
+      height: 100px;
+      column-gap: 20%;
   }
 
   .avatar-sect
@@ -166,11 +168,10 @@ button
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    background-color: #fff;
     border-radius: 50%;
-    height:8vh;
-    width:20vw;
-     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height:100%;
+    width:100%;
+    
   }
 
   #play-container>div>div:nth-child(2)
@@ -178,6 +179,8 @@ button
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    height:100%;
+    width:100%;
   }
 
   #play-container>div>div:nth-child(3)
@@ -185,7 +188,8 @@ button
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-    
+    height:100%;
+    width:100%;
   }
 
   .logo
@@ -213,11 +217,22 @@ button
     
   }
 
+  .money-tree
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+  }
+
   .questions>div:nth-child(1)
   {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    align-items: center;
     column-gap: 5%;
     row-gap:5%;
     width: 100%;
@@ -229,9 +244,10 @@ button
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
+    justify-items: center;
     background-color: #fff;
     height:60%;
-    width:auto;
+    width:80%;
     padding:5%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
@@ -240,6 +256,8 @@ button
   {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
     column-gap: 5%;
     width: 100%;
   }
@@ -251,6 +269,7 @@ button
     align-items: center;
     background-color: #fff;
     height:70%;
+    width: 80%;
     padding:10%;
     cursor: pointer;
     border: solid 0.5rem transparent;
@@ -320,11 +339,13 @@ button
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #61729c;
+    color:#fff;
+    font-family: 'Righteous', cursive;
     border-radius: 50%;
     height:8vh;
     width:15vw;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0 12px #999;
   }
 
   #play-container>div>div:nth-child(3)>div
@@ -334,5 +355,48 @@ button
     display: grid;
     grid-template-columns: 1fr;
     align-items: end;
+    padding-bottom: 35%;
+  
   }
- 
+
+  .dollar-values>button
+  {
+    border-radius: 50%;
+    background-color: #1c9ee8;
+    border-style:solid ;
+    color: #fff;
+    font-family: 'Righteous', cursive;
+    font-size: 2.5rem;
+    font-weight: 600;
+    width: 220px;
+    height:100%;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 12px #999;
+  }
+
+  .dollar-values>button:hover
+  {
+    background-color:#f00;
+  }
+
+  .bank>button
+  {
+    border-radius: 5%;
+    background-color: #61729c;
+    color: #fff;
+    font-family: 'Righteous', cursive;
+    font-size: 2.5rem;
+    font-weight: 600;
+    width: 220px;
+    height:100%;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: none;
+  }

@@ -6,9 +6,7 @@ const Timer = () => {
     return (
         <>
             <div className = "timer">
-                <h4>
-                    Timer
-                </h4>
+                <h4> TIMER </h4>
             </div>
         </>
     )

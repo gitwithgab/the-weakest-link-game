@@ -10,8 +10,10 @@ const SelectPage = () => {
             <div id="select-container">
 
                 <h1>SELECT PLAYER</h1>
-
+                
+                <div>
                 <Avatars />
+                </div>
 
                 <div>
                     <BtnBack />

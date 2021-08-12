@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from "../components/Logo";
-import MoneyTree from "../components/MoneyTree";
+import MoneyTree from "../components/MoneyTreeList";
 import Questions from "../components/Questions";
 import Timer from "../components/Timer";
 
