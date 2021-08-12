@@ -5,25 +5,37 @@ import selAvatarContext from "../context/SelAvatarContext";
 const AvatarsCard = (props) => {
 
     const avatarImage = require(`../assets/img/${props.img}`).default;
-    const {avatars} = useContext(AvatarContext);
-    const { setSelAvatar} = useContext(selAvatarContext);
+    const { avatars } = useContext(AvatarContext);
+    const { setSelAvatar } = useContext(selAvatarContext);
     
     const selectedAvatar = () =>
 
     {
-       
-        const seldAvatar = avatars.find((avatar) => avatar.isSelected === true);
+
+        const dupAvatars = [...avatars];
+
+        const trueAvatar = dupAvatars.find((avatar) => avatar.isSelected === true);
+
+        if(trueAvatar)
+
+        {
+        
+            trueAvatar.isSelected = false;
+        
+        }
+
+        const seldAvatar = dupAvatars.find((avatar) => avatar.id === props.id);
+
+        seldAvatar.isSelected = true;
 
         setSelAvatar(seldAvatar);
- 
+     
     }
-
- 
 
 
     return (
         <>
-                    <div className="avatar-sect" onClick={selectedAvatar} >
+                    <div className={props.isSelected ? "avatar-sect selected" : "avatar-sect"} onClick={selectedAvatar} >
   
                                 <div>
 

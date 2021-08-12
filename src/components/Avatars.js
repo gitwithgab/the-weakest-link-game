@@ -6,12 +6,14 @@ import avatarContext from "../context/AvatarContext";
 function createCard (AvatarsData) {
     return (
             <AvatarsCard 
-            
+
+                id = {AvatarsData.id}
                 key = {AvatarsData.id}
                 img = {AvatarsData.img}
                 name = {AvatarsData.name}
                 occupation = {AvatarsData.occupation}
                 age = {AvatarsData.age}
+                isSelected = {AvatarsData.isSelected}
 
             />
     );

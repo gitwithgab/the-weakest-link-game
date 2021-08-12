@@ -68,7 +68,7 @@ const App = () => {
     {
         id : 6,
         img : "avatar6.png",
-        imgFull : "sienna.png",
+        imgFull : "maritza.png",
         name : "Sienna",
         occupation : "Psychologist",
         age : "23",
