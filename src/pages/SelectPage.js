@@ -12,7 +12,7 @@ const SelectPage = () => {
                 <h1>SELECT PLAYER</h1>
                 
                 <div>
-                <Avatars />
+                    <Avatars />
                 </div>
 
                 <div>
