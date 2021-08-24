@@ -154,7 +154,7 @@ button
     display:grid;
     grid-template-columns: 1fr 4fr 1fr;
     justify-items: center;
-    padding:5%;
+    padding:2%;
   }
 
   #play-container>div:nth-child(1)
@@ -163,7 +163,7 @@ button
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    height:100%;
+    height:90%;
   }
 
   #play-container>div:nth-child(2)
@@ -174,8 +174,7 @@ button
     justify-items: center;
     align-items: center;
     height:100%;
-    width:100%;
-    row-gap: 5%;
+    width:90%;
   }
 
   #play-container>div:nth-child(3)
@@ -237,6 +236,7 @@ button
   #play-container>div:nth-child(2)>div:nth-child(2) img
   {
     height:400px;
+    width: auto;
   }
 
   #play-container>div:nth-child(3)>div h4
@@ -249,8 +249,8 @@ button
     color:#fff;
     font-family: 'Righteous', cursive;
     border-radius: 50%;
-    height:8vh;
-    width:15vw;
+    height:80px;
+    width:120px;
     box-shadow: 0 12px #999;
   }
 
@@ -261,7 +261,7 @@ button
     display: grid;
     grid-template-columns: 1fr;
     align-items: end;
-    padding-bottom: 35%;
+    padding-bottom: 50%;
   
   }
 
@@ -272,9 +272,9 @@ button
     border-style:solid ;
     color: #fff;
     font-family: 'Righteous', cursive;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
-    width: 220px;
+    width: 200px;
     height:100%;
     padding: 10px 0 10px 0;
     text-align: center;
@@ -314,6 +314,21 @@ button
     font-weight: 600;
     text-align: center;
     cursor: default;
+  }
+
+  .money-tree>div>div
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: #61729c;
+    color:#fff;
+    font-family: 'Righteous', cursive;
+    border-radius: 50%;
+    height:80px;
+    width:200px;
+    box-shadow: 0 12px #999;
   }
 
   .timer

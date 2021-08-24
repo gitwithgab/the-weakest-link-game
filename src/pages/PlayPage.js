@@ -68,6 +68,7 @@ const PlayPage = () => {
                             <Questionnaire data={questions[currentIndex]} handleAnswer={handleAnswer} />    
                             
                             <h4 className="response">{response}</h4>
+                        
                         </div>
 
                         <div>
@@ -88,7 +89,9 @@ const PlayPage = () => {
                         <Logo />
                         
                         <div>
+
                             <Timer />
+                        
                         </div>
                         
                     </div>

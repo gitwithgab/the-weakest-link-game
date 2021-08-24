@@ -57,7 +57,9 @@ const Timer = (minsSecs) => {
     return (
         <>
             <div className = "timer">
+
                 <h4> {`${mins1.toString().padStart(1,'0')}:${secs1.toString().padStart(2,'0')}`} </h4>
+            
             </div>
         </>
     )
