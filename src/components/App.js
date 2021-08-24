@@ -6,7 +6,7 @@ import {
   Switch, 
   Route,
   } from 'react-router-dom';
-import HomePage from "../pages/HomePage";
+import StartPage from "../pages/StartPage";
 import SelectPage from "../pages/SelectPage";
 import PlayPage from "../pages/PlayPage";
 
@@ -68,7 +68,7 @@ const App = () => {
     {
         id : 6,
         img : "avatar6.png",
-        imgFull : "maritza.png",
+        imgFull : "sienna.png",
         name : "Sienna",
         occupation : "Psychologist",
         age : "23",
@@ -89,6 +89,7 @@ const [selAvatars, setSelAvatar] = useState({
 })
 
 
+
   return (
     <>
             <Router>
@@ -97,7 +98,7 @@ const [selAvatars, setSelAvatar] = useState({
                      
                         <Route exact path="/">
                           
-                            <HomePage />
+                            <StartPage />
                       
                         </Route>
 

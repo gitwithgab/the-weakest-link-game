@@ -4,17 +4,19 @@ import selAvatarContext from "../context/SelAvatarContext";
 
 const AvatarsCard = (props) => {
 
+    
     const avatarImage = require(`../assets/img/${props.img}`).default;
     const { avatars } = useContext(AvatarContext);
     const { setSelAvatar } = useContext(selAvatarContext);
     
+
     let selectedAvatar = () =>
 
     {
 
         const dupAvatars = [...avatars];
 
-        const activeAvatar = dupAvatars.find((avatar) => avatar.isSelected === true);
+        let activeAvatar = dupAvatars.find((avatar) => avatar.isSelected === true);
 
         if(activeAvatar)
 
@@ -24,16 +26,13 @@ const AvatarsCard = (props) => {
         
         }
 
-        const seldAvatar = dupAvatars.find((avatar) => avatar.id === props.id);
+        let seldAvatar = dupAvatars.find((avatar) => avatar.id === props.id);
         
         seldAvatar.isSelected = true;
 
         setSelAvatar(seldAvatar);
      
     }
-    
-
-  
 
 
 
@@ -61,6 +60,8 @@ const AvatarsCard = (props) => {
                                 </div>
 
                     </div>  
+
+                    
         </>
     )
 }

@@ -71,12 +71,12 @@ const MoneyTreeList = () => {
             <div className="money-tree">
             
                 {roundOne.map(createTree)}
-    
+
+                <h1>BANK</h1>
+                
             </div>
 
-            <div className="bank">
-                <button>BANK</button>
-            </div>
+
        
         </>
                    

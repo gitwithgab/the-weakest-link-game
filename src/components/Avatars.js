@@ -31,6 +31,7 @@ const Avatars = () => {
                     {avatars.map(createCard)}
 
                 </div>
+
         </>
     )
 }

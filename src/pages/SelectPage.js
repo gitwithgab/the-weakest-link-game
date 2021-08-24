@@ -1,9 +1,20 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Avatars from "../components/Avatars";
-import BtnBack from '../components/BtnBack';
-import BtnPlay from "../components/BtnPlay";
+/*import selAvatarContext from '../context/SelAvatarContext';*/
+
 
 const SelectPage = () => {
+
+
+    /*
+    const { selAvatars } = useContext(selAvatarContext);
+    */
+
+    let handleClick = () => {
+        
+
+    };
 
     return (
         <>
@@ -16,9 +27,19 @@ const SelectPage = () => {
                 </div>
 
                 <div>
-                    <BtnBack />
+                    <Link to="/">
+                    
+                        <button className="btn" type="button" id="cashButton">CANCEL</button>
+                
+                    </Link> 
 
-                    <BtnPlay />
+                    <Link to="/play">
+               
+                        <button className="btn" type="button" id="cashButton"
+                                onClick={handleClick}>ACCEPT
+                        </button>
+                
+                    </Link> 
                 </div>
 
             </div>
