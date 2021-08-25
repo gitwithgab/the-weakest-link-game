@@ -8,7 +8,6 @@ const AvatarsCard = (props) => {
     const avatarImage = require(`../assets/img/${props.img}`).default;
     const { avatars } = useContext(AvatarContext);
     const { setSelAvatar } = useContext(selAvatarContext);
-    
 
     let selectedAvatar = () =>
 
@@ -36,9 +35,13 @@ const AvatarsCard = (props) => {
 
 
 
+
+
     return (
         <>
-                    <div className={props.isSelected ? "avatar-sect selected" : "avatar-sect"} onClick={selectedAvatar}>
+                    <div 
+                        className={props.isSelected ? "avatar-sect selected" : "avatar-sect"} 
+                        onClick={selectedAvatar}>
   
                                 <div>
 

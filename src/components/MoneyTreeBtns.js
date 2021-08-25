@@ -1,10 +1,11 @@
 import React from 'react';
 
 const MoneyTreeBtns = ({valueAmount}) => {
+    
     return (
         <div className="dollar-values">
             
-            <button >{valueAmount}</button>
+            <button>${valueAmount}</button>
             
         </div>
     )

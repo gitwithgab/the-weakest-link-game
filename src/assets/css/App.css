@@ -148,7 +148,7 @@ button
  
 #play-container
   {
-    background-color: #3a41a1;
+    background-color: #61729c;
     min-height:100vh;
     width:100vw;
     display:grid;
@@ -156,7 +156,7 @@ button
     justify-items: center;
     padding:2%;
   }
-
+ 
   #play-container>div:nth-child(1)
   {
     display: grid;
@@ -245,7 +245,7 @@ button
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    background-color: #61729c;
+    background-color:  #3a41a1;
     color:#fff;
     font-family: 'Righteous', cursive;
     border-radius: 50%;
@@ -261,7 +261,7 @@ button
     display: grid;
     grid-template-columns: 1fr;
     align-items: end;
-    padding-bottom: 50%;
+    padding-bottom: 100%;
   
   }
 
@@ -322,7 +322,7 @@ button
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    background-color: #61729c;
+    background-color:  #3a41a1;
     color:#fff;
     font-family: 'Righteous', cursive;
     border-radius: 50%;
@@ -355,6 +355,7 @@ button
     column-gap: 5%;
     row-gap:5%;
     width: 100%;
+
   }
 
   .questions button
@@ -382,8 +383,9 @@ button
     align-items: center;
     justify-items: center;
     column-gap: 5%;
-    row-gap: 10%;;
+    row-gap: 10%;
     width: 100%;
+
   }
 
   .questions>div:nth-child(2)>button
@@ -409,7 +411,42 @@ button
     width:100vw;
   }
 
-  .response
+  .correct
   {
-    color: white;
+    color: green !important;
+  } 
+  
+  .incorrect
+  {
+    color: red !important;
   }
+  
+  .inactive
+  {
+    color: black !important;
+  }
+
+  .next-btn
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .next-btn button
+  {
+    width:100%;
+    height:auto;
+  }
+
+  .next-btn button:hover
+  {
+    background-color: #bebeb6;
+  }
+
+  /*/ Extra small devices (portrait phones, less than 576px)/*/
+@media (max-width: 575.98px) 
+{
+
+}

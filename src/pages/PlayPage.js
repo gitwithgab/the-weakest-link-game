@@ -2,22 +2,22 @@ import React, { useState, useEffect, useContext }  from 'react';
 import Logo from "../components/Logo";
 import MoneyTree from "../components/MoneyTreeList";
 import Timer from "../components/Timer";
-import Questionnaire from "../components/Questionnaire";
+import Trivia from "../components/Trivia";
 import selAvatarContext from '../context/SelAvatarContext';
 
 
-
-const API_URL = 'https://opentdb.com/api.php?amount=10&type=multiple';
+const API_URL = 'https://opentdb.com/api.php?amount=50&category=12&difficulty=easy&type=multiple';
 
 
 const PlayPage = () => {
 
     const { selAvatars } = useContext(selAvatarContext);
-    const [questions, setQuestions] = useState([]);
+    const [question, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [response,setResponse] = useState("");
-    const avatarImage = require(`../assets/img/${selAvatars.imgFull}`).default
-    const avatarName = selAvatars.name
+    const [showAnswers,setShowAnswers] = useState(false);
+    const [bank,setBank] = useState(0);
+    const avatarImage = require(`../assets/img/${selAvatars.imgFull}`).default;
+    const avatarName = selAvatars.name;
 
 
     useEffect (() => {
@@ -26,38 +26,43 @@ const PlayPage = () => {
             .then((data) => {
 
                 setQuestions(data.results);
-             
+
             });
     }, []);
     
 
     const handleAnswer = (answer) => {
 
-        const newIndex = currentIndex + 1;
-        setCurrentIndex(newIndex);
-
-        if(answer === questions[currentIndex].correct_answer)
+        setShowAnswers(true);
+        
+        if (answer === question[currentIndex].correct_answer)
         {
-            setResponse("Correct!")
+            setBank()
         }
-
-        else
-        {
-            setResponse("Incorrect:(")
-        }
-    
+        
     };
 
+    const handleNextQuestion = () => {
+        
+        setShowAnswers(false);
 
+        const newIndex = currentIndex + 1;
+        
+        setCurrentIndex(newIndex);
+    }
 
-    return questions.length > 0 ? (
+  
+
+    return question.length > 0 ? (
         <>
 
             <div id="play-container">
 
                     <div>
 
-                        <MoneyTree />
+                        <MoneyTree 
+                            bank={bank}
+                        />
 
                     </div>
 
@@ -65,9 +70,12 @@ const PlayPage = () => {
 
                         <div>
                             
-                            <Questionnaire data={questions[currentIndex]} handleAnswer={handleAnswer} />    
-                            
-                            <h4 className="response">{response}</h4>
+                            <Trivia 
+                                data={question[currentIndex]} 
+                                showAnswers={showAnswers}
+                                handleNextQuestion={handleNextQuestion}
+                                handleAnswer={handleAnswer} 
+                            />    
                         
                         </div>
 
