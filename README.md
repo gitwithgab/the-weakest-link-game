@@ -1,4 +1,4 @@
-# THE WEAKEST LINK 
+# THE WEAKEST LINK (TWL)
 This project illustrates practical experience in building client side web applications using  HTML , CSS, JavaScript and Reactjs.
 
 ## TWL GAME DETAILS
