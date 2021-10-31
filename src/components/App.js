@@ -149,7 +149,8 @@ const [roundOneMt, setRoundOneMt] = useState([
                         <Route exact path="/">
                           
                             <StartPage />
-                      
+                            <bgMusic />
+
                         </Route>
 
 

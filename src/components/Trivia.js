@@ -4,11 +4,8 @@ import React from 'react';
 const Trivia = ( { showAnswers,
                    handleNextQuestion,
                    handleAnswer, 
-                   data: {question, correct_answer, incorrect_answers} 
+                   data: {question, correct_answer, answers} 
                 }) => {
-
-
-    const shuffleAnswers = [correct_answer, ...incorrect_answers].sort(() => (Math.floor(Math.random) * 2) + 1);
 
     
     return (
@@ -23,10 +20,10 @@ const Trivia = ( { showAnswers,
 
                 <div>
 
-                        {shuffleAnswers.map(answer => (
+                        {answers.map((answer,id) => (
                         
                         <button 
-
+                            key={id}
                             className ={showAnswers ? answer === correct_answer ? "correct" : "incorrect" : "inactive"}
                             onClick={() => handleAnswer(answer)}
                             dangerouslySetInnerHTML={{ __html: answer}}

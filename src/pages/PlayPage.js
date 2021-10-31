@@ -12,9 +12,9 @@ const API_URL = 'https://opentdb.com/api.php?amount=50&category=12&difficulty=ea
 const PlayPage = (props) => {
 
     const { selAvatars } = useContext(selAvatarContext);
-    const { roundOneMt } = useContext(roundOneContext);
+   const { roundOneMt } = useContext(roundOneContext);
     const [question, setQuestions] = useState([]);
-    const [currentMtIndex, setCurrentMtIndex] = useState(0)
+    const [currentMtIndex] = useState(0)
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showAnswers,setShowAnswers] = useState(false);
     const [bank, setBank] = useState(0);
@@ -22,9 +22,27 @@ const PlayPage = (props) => {
     const avatarName = selAvatars.name;
 
 
+    useEffect (() => {
+        fetch(API_URL)
+            .then((res) => res.json())
+            .then((data) => {
+
+                const questions = data.results.map((question) =>
+                ({
+                    ...question,
+                    answers: [question.correct_answer,...question.incorrect_answers
+                    ].sort(() => Math.random() - 0.5)
+                }))
+
+                setQuestions(questions);
+
+            });
+    }, []);
+
 
     const bankScore =() =>
     {
+
         let bankVal = bank;
 
         const roundCash = [...roundOneMt];
@@ -38,20 +56,29 @@ const PlayPage = (props) => {
         setBank(bankVal);
 
     }
+/*
+    const handleAnswer = (answer, cash, cashVal) => {
 
+        const roundCash = [...roundOneMt];
+        
+        const newMtIndex = currentMtIndex + 1
 
-    useEffect (() => {
-        fetch(API_URL)
-            .then((res) => res.json())
-            .then((data) => {
+        const activeCash = roundCash.find((cash)=>{return cash.isActive ===true});
 
-                setQuestions(data.results);
+        setCurrentMtIndex(newMtIndex)
 
-            });
-    }, []);
-    
+        if (answer === question[currentIndex].correct_answer)
+        {
 
-    const handleAnswer = (answer, cashVal) => {
+            activeCash.isActive = false;
+
+        }
+
+        let seldIndex = roundCash.find((cash) = cash.id === props.id)
+
+        seldIndex.isActive = true;
+
+        setRoundOneMt(seldIndex[newMtIndex]);
 
         setShowAnswers(true);
         
@@ -59,8 +86,20 @@ const PlayPage = (props) => {
         {
             setBank(cashVal)
         }
-        
+
     };
+*/
+
+const handleAnswer = (answer, cashVal) => {
+
+    setShowAnswers(true);
+    
+    if (answer === question[currentIndex].correct_answer)
+    {
+        setBank(cashVal)
+    }
+    
+};
 
     const handleNextQuestion = () => {
         
@@ -69,22 +108,10 @@ const PlayPage = (props) => {
         const newIndex = currentIndex + 1;
         
         setCurrentIndex(newIndex);
+
     }
 
   
-        const nextPosition = (answer) => {
-            const roundOne = [...roundOneMt];
-
-            const length = roundOne.length;
-
-            if(answer === question[currentMtIndex].correct_answer)
-            {
-                setCurrentMtIndex(currentMtIndex === length -1 ? 0 : currentMtIndex + 1)
-            }
-
-        }
-
-    
 
   
 
@@ -100,14 +127,11 @@ const PlayPage = (props) => {
                                 {roundOneMt.map((cash, index)=>(<MoneyTree 
                                                                 key={cash.id} 
                                                                 valueAmount={cash.valueAmount} 
-                                                                isActive={cash.isActive} 
-                                                                nextPosition={nextPosition} 
-                                                                className={index === currentMtIndex ? 'dollar-values active' : 'dollar-values'}
+                                                                isActive={cash.isActive}                                                                 className={index === currentMtIndex ? 'dollar-values active' : 'dollar-values'}
                                                                 />))}
                         </div>
                        
                         <div >
-
 
 
                         </div>

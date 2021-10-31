@@ -1,12 +1,8 @@
 # THE WEAKEST LINK (TWL)
-This project illustrates practical experience in building client side web applications using  HTML , CSS, JavaScript and Reactjs.
+This project illustrates practical experience in building client side web applications using  HTML, CSS, JavaScript, Reactjs and third-party API from [The Open Trivia Database](https://opentdb.com/).
 
 ## TWL GAME DETAILS
-<<<<<<< HEAD
-The weakest link is a web application based on the famous television game show, of the same name.
-=======
 The weakest link is a client-side web application based on the famous television game show, of the same name.
->>>>>>> ab688ab8a12b009b77feb001ff03ca78bc1547bf
 
 The game features a single player/avatar who is required to answer general knowledge questions. The game is broken up into three rounds, the first two rounds allow the player to bank and earn money whereas, the last round is a sudden death round that will determine if he or she will walk away with the total money banked in the two previous rounds; or lose the game and be labeled the “WEAKEST LINK.”
 
