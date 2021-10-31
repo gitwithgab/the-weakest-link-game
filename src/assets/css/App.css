@@ -71,7 +71,7 @@ button
       width:100vw;
       display:grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 10% 70% 10%;
+      grid-template-rows: 10% 80% 10%;
       justify-items: center;
       align-items: center;
       color:#fff;
@@ -270,7 +270,6 @@ button
     grid-template-columns: 1fr;
     align-items: end;
     padding-bottom: 100%;
-  
   }
 
   .dollar-values>button
@@ -322,6 +321,28 @@ button
     font-weight: 600;
     text-align: center;
     cursor: default;
+  }
+  
+  .test
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .test>h1
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background-color: darkgrey;
+    border:solid;
+    border-color: white;
+    width:180px;
+    height:60px;
+    color:white;
   }
 
   .money-tree>div>div

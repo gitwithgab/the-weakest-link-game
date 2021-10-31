@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import avatarContext from "../context/AvatarContext";
 import selAvatarContext from "../context/SelAvatarContext";
+import roundOneContext from "../context//RoundOneContext";
 import {
   BrowserRouter as Router, 
   Switch, 
@@ -88,6 +89,55 @@ const [selAvatars, setSelAvatar] = useState({
 
 })
 
+const [roundOneMt, setRoundOneMt] = useState([
+        {
+            id: 1,
+            valueAmount:500000,
+            isActive:false
+        },
+        {
+            id: 2,
+            valueAmount:250000,
+            isActive:false
+        },
+        {
+            id: 3,
+            valueAmount:125000,
+            isActive:false
+        },
+        {
+            id: 4,
+            valueAmount:75000,
+            isActive:false
+        },
+
+        {
+            id: 5,
+            valueAmount:50000,
+            isActive:false
+        },
+        {
+            id: 6,
+            valueAmount:10000,
+            isActive:false
+        },
+        {
+            id: 7,
+            valueAmount:5000,
+            isActive:false
+        },
+        {
+            id: 8,
+            valueAmount:1000,
+            isActive:false
+        },
+        {
+            id: 9,
+            valueAmount:0,
+            isActive:false
+        }
+]);
+
 
 
   return (
@@ -103,25 +153,31 @@ const [selAvatars, setSelAvatar] = useState({
                         </Route>
 
 
-                        <avatarContext.Provider  value={{avatars,setAvatars}}>
+                          <avatarContext.Provider  value={{avatars,setAvatars}}>
                         
-                        <selAvatarContext.Provider  value={{selAvatars,setSelAvatar}}>
-                        
-                            <Route path="/select">
-                              
-                                <SelectPage />
-                            
-                            </Route>
+                          <selAvatarContext.Provider  value={{selAvatars,setSelAvatar}}>
 
-                            <Route path="/play">
-                                
-                                <PlayPage />
-                            
-                            </Route>
+                          <roundOneContext.Provider value={{roundOneMt, setRoundOneMt}}>
+                          
+                                    <Route path="/select">
+                                      
+                                        <SelectPage />
+                                    
+                                    </Route>
 
-                      </ selAvatarContext.Provider>
+                                    <Route path="/play">
+                                        
+                                        <PlayPage />
+                                    
+                                    </Route>
+
+                          </roundOneContext.Provider>
+                      
+                          </ selAvatarContext.Provider>
                      
-                      </ avatarContext.Provider>
+                          </ avatarContext.Provider>
+
+
                       
                 
                   </Switch>
