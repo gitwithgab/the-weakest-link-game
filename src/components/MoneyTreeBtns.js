@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MoneyTreeBtns = ({valueAmount}) => {
+const MoneyTreeBtns = (props) => {
     
     return (
-        <div className="dollar-values">
+        <div className={props.isActive === true ? "dollar-value active" : "dollar-values"}>
             
-            <button>${valueAmount}</button>
+            <button>${props.valueAmount}</button>
             
         </div>
     )

@@ -9,7 +9,7 @@ import selAvatarContext from '../context/SelAvatarContext';
 const API_URL = 'https://opentdb.com/api.php?amount=50&category=12&difficulty=easy&type=multiple';
 
 
-const PlayPage = () => {
+const PlayPage = (props) => {
 
     const { selAvatars } = useContext(selAvatarContext);
     const [question, setQuestions] = useState([]);
